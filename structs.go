@@ -13,10 +13,17 @@ type user struct {
 }
 
 func main() {
-	firstName := getUserData("Please enter your first name:")
-	lastName := getUserData("please enter your last name:")
-	birthDate := getUserData("Please enter yout birtdate")
+	userFirstName := getUserData("Please enter your first name:")
+	userLastName := getUserData("please enter your last name:")
+	userBirthDate := getUserData("Please enter yout birtdate")
 
+	var appUser user
+	appUser = user{
+		firstName: userFirstName,
+		lastName:  userLastName,
+		birthDate: userBirthDate,
+		createdAt: time.Now(),
+	}
 	outputUserDetails(firstName, lastName, birthDate)
 
 }
